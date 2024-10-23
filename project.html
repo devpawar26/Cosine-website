@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skincare and Makeup Products</title>
+    <style>
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 40%;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .container {
+        padding: 2px 16px;
+      }
+
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("./static/pic2.jpeg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      .survey {
+        max-width: 500px;
+        /* Adjust the max-width as needed */
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .survey label {
+        margin-bottom: 5px;
+      }
+
+      .survey select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+      }
+
+      .survey button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .product-suggestions {
+        margin-top: 20px;
+      }
+
+      .product-suggestions h2 {
+        margin-top: 0;
+      }
+
+      .product-suggestions ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .product-suggestions li {
+        background-color: #f3f3f3;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Skincare and Makeup Products</h1>
+    </header>
+    <main>
+      <div class="survey">
+        <h2>Find the Perfect Products for Your Skin</h2>
+        <br />
+        <form id="skinSurvey" action="/submit" method="POST">
+          <label for="age">What is your age?</label><br />
+          <input type="text" id="age" name="age" required /><br /><br />
+
+          <label for="gender">What is your gender?</label>
+          <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <br /><br />
+          <label for="allergies"
+            >Do you have any known allergies to skincare ingredients?</label
+          >
+          <select id="allergies" name="allergies" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <br /><br />
+          <label for="skinType">How would you describe your skin type?</label>
+          <select id="skinType" name="skinType" required>
+            <option value="normal">Normal</option>
+            <option value="dry">Dry</option>
+            <option value="oily">Oily</option>
+            <option value="combination">Combination</option>
+          </select>
+          <br /><br />
+          <label for="sunExposure">How much sun exposure do you get?</label
+          ><br />
+          <input type="radio" name="sunExposure" id="low" value="low" />
+          <label for="low">Low</label>
+          <input type="radio" name="sunExposure" id="medium" value="medium" />
+          <label for="medium">Medium</label>
+          <input type="radio" name="sunExposure" id="high" value="high" />
+          <label for="high">High</label>
+          <br /><br />
+          <label for="hydration">How often do you hydrate your skin?</label
+          ><br />
+          <input type="radio" name="hydration" id="rarely" value="rarely" />
+          <label for="rarely">Rarely</label>
+          <input
+            type="radio"
+            name="hydration"
+            id="occasionally"
+            value="occasionally"
+          />
+          <label for="occasionally">Occasionally</label>
+          <input type="radio" name="hydration" id="daily" value="daily" />
+          <label for="daily">Daily</label><br /><br />
+
+          <label for="productsUsed"
+            >How many skincare products do you use regularly?</label
+          ><br />
+          <input
+            type="number"
+            name="productsUsed"
+            id="productsUsed"
+            min="0"
+          /><br /><br />
+
+          <label for="stress">How would you rate your stress level?</label
+          ><br />
+          <input type="radio" name="stress" id="lowStress" value="low" />
+          <label for="lowStress">Low</label>
+          <input type="radio" name="stress" id="mediumStress" value="medium" />
+          <label for="mediumStress">Medium</label>
+          <input type="radio" name="stress" id="highStress" value="high" />
+          <label for="highStress">High</label><br /><br />
+
+          <label for="sleep"
+            >How many hours of sleep do you get on average per night?</label
+          ><br />
+          <input type="number" name="sleep" id="sleep" min="0" /><br /><br />
+
+          <label for="diet">How would you rate your diet?</label><br />
+          <input type="radio" name="diet" id="poorDiet" value="poor" />
+          <label for="poorDiet">Poor</label>
+          <input type="radio" name="diet" id="averageDiet" value="average" />
+          <label for="averageDiet">Average</label>
+          <input type="radio" name="diet" id="healthyDiet" value="healthy" />
+          <label for="healthyDiet">Healthy</label><br /><br />
+
+          <label for="exercise">How often do you exercise?</label><br />
+          <input
+            type="radio"
+            name="exercise"
+            id="rarelyExercise"
+            value="rarely"
+          />
+          <label for="rarelyExercise">Rarely</label>
+          <input
+            type="radio"
+            name="exercise"
+            id="occasionallyExercise"
+            value="occasionally"
+          />
+          <label for="occasionallyExercise">Occasionally</label>
+          <input
+            type="radio"
+            name="exercise"
+            id="regularlyExercise"
+            value="regularly"
+          />
+          <label for="regularlyExercise">Regularly</label><br /><br />
+
+          <label for="smoking">Do you smoke?</label><br />
+          <input type="radio" name="smoking" id="smokingYes" value="yes" />
+          <label for="smokingYes">Yes</label>
+          <input type="radio" name="smoking" id="smokingNo" value="no" />
+          <label for="smokingNo">No</label><br /><br />
+
+          <label for="alcohol">Do you consume alcohol?</label><br />
+          <input type="radio" name="alcohol" id="alcoholYes" value="yes" />
+          <label for="alcoholYes">Yes</label>
+          <input type="radio" name="alcohol" id="alcoholNo" value="no" />
+          <label for="alcoholNo">No</label><br /><br />
+
+          <label for="stress">How would you rate your stress level?</label
+          ><br />
+          <input type="radio" name="stress" id="lowStress" value="low" />
+          <label for="lowStress">Low</label>
+          <input type="radio" name="stress" id="mediumStress" value="medium" />
+          <label for="mediumStress">Medium</label>
+          <input type="radio" name="stress" id="highStress" value="high" />
+          <label for="highStress">High</label><br /><br />
+
+          <label for="skinConcerns">Select any skin concerns you have:</label
+          ><br />
+          <input
+            type="checkbox"
+            name="skinConcerns"
+            id="wrinkles"
+            value="wrinkles"
+          />
+          <label for="wrinkles">Wrinkles</label>
+          <input
+            type="checkbox"
+            name="skinConcerns"
+            id="darkSpots"
+            value="darkSpots"
+          />
+          <label for="darkSpots">Dark Spots</label>
+          <input
+            type="checkbox"
+            name="skinConcerns"
+            id="acneScars"
+            value="acneScars"
+          />
+          <label for="acneScars">Acne Scars</label><br /><br />
+
+          <label for="preferredProducts"
+            >What type of skin care products do you prefer?</label
+          ><br />
+          <input
+            type="radio"
+            name="preferredProducts"
+            id="natural"
+            value="natural"
+          />
+          <label for="natural">Natural</label>
+          <input
+            type="radio"
+            name="preferredProducts"
+            id="organic"
+            value="organic"
+          />
+          <label for="organic">Organic</label>
+          <input
+            type="radio"
+            name="preferredProducts"
+            id="synthetic"
+            value="synthetic"
+          />
+          <label for="synthetic">Synthetic</label><br /><br />
+
+          <button type="submit" value="submit">Get Product Suggestions</button>
+        </form>
+      </div>
+      <div class="product-suggestions" id="productSuggestions"></div>
+    </main>
+  
+  </body>
+</html>

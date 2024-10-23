@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skin Care Products</title>
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .product img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .product h2 {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      .product p {
+        font-size: 16px;
+        margin-top: 5px;
+      }
+
+      .product a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      .product a:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='minimilist serum 1.png') }}"
+            alt="Product 1"
+          />
+          <h2>Product 1</h2>
+          <p>
+            Minimalist 2% Alpha Arbutin Serum for Pigmentation & Dark Spots
+            Removal
+          </p>
+          <a
+            href="https://www.amazon.in/Minimalist-Arbutin-Pigmentation-Hyaluronic-Blemishes/dp/B08GGDRRQ8/ref=sr_1_1?crid=18DLCSY478A2K&dib=eyJ2IjoiMSJ9.t4AD873smY2vqraCN9dvAU0jvwqkZ8gGp-Ubyvg9uSy_bapwKcL4eAX5-3yCpJ3LOmiSobbpRAgpCM0suQIGmX0XK1n3f70s8z2RU2IC8uTnlbHtTwZVefL9dG_wA-e4D-jtp4HuCikbcdqK3RgR9ox8cwij5zRnV02zGcl92q5NCiTkspINHhql4AZ5JTeF-_ynep7w4ntWXghe5D0K2b3OIFta-wWc3C1BDk8sBqAC_U5pw2QATPDeStuHXBFKnNWlexvpCs9tJQ31F9YQPMU3AQcoORO6vIAxfNLkTO0.fUFS6Nnq3iEJUo9ekWcoaV7tPvJtr-88f9qd9WK956w&dib_tag=se&keywords=minimalist+serum&qid=1709705089&sprefix=minimalist+%2Caps%2C1422&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+            target="_blank"
+            >View on Amazon</a
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='facewash2.jpg') }}"
+            alt="Product 2"
+          />
+          <h2>Product 2</h2>
+          <p>
+            Neutrogena Oil Free Acne Wash Deep Cleansing Face Wash with
+            Salicylic Acid
+          </p>
+          <a
+            href="https://www.amazon.in/Neutrogena-Free-Acne-Face-175ml/dp/B006LXDMCS/ref=sr_1_4?crid=3BJMA6TXPURW8&dib=eyJ2IjoiMSJ9.yhGt38nL7AU7SCOr3-xkX2qDfc2npLxIzaHsJz_qNfPHFdyqJosxo_uR8s33l2IcZbOJ7UZjhSy9fETrumCTzYfunMznWVYyrVXyBSrPLS8dHSrZ9iWX7c2iPiiJ25s52yTQFuPo6pA00Iw50x_ywyfg37UGoxlqlrj4-dVMNBOr4v5OhMlNm5x6cyo0Be24FF6UsgSKu-kyqE6ghtCR5cOhPOsJX-783nvj2tsCuCsw7cvaOIbhqiv81AAVLCiZSK168ht8FRL-SFtHJSiveLSISGM_BNgerztn3km4CQ8.xHBrkKJT-1-YNPESQeq7pvFGO_oCUTaQh5mJ8908euU&dib_tag=se&keywords=face+wash+men&qid=1709705403&sprefix=face+wash+%2Caps%2C287&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+            target="_blank"
+            >View on Amazon</a
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='sunsscreen3.webp') }}"
+            alt="Product 3"
+          />
+          <h2>Product 3</h2>
+          <p>Dr. Sheth's Ceramide & Vitamin C Sunscreen SPF 50+ PA+++</p>
+          <a
+            href="https://www.amazon.in/Dr-Sheths-Sunscreen-Sensitive-Protection/dp/B09WJG7QTR/ref=sr_1_3?crid=WY6E1E5PTTYM&dib=eyJ2IjoiMSJ9.ikzpBFN1saqY9x-F8QdeEQPmNT6yWjcl4Uo_uAggXzSb0tisypmAs9V03KRVyZ2dajsidEyQP2l21Szq63ZRxDZ4tRQDvm1l4Q6u1Z3l5PAiyN2zfvRndNYx4W4XyWWVefCgIokImgEqad4N-I7NZMRDj8GoL7UHYwMGaTNmhxs5HIfZnUG-i2Qw3EdqUZsfLGRT_cBd8-ZSW2DeqbeSdtjwRYDHLqb_UiQXnCxLyFDBkcYJrHgw6p1wdgRk2AVFBmE8PvxFtwVmuDsL6hwqWYK21GJSWKItmKGB1c2SuC0.I9tMXydru75MMLjUfzJObL_RUWVPtLkMK1ZbUd85qiE&dib_tag=se&keywords=sunscreen+spf+50&qid=1709705512&sprefix=sunscre%2Caps%2C276&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+            target="_blank"
+            >View on Amazon</a
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='sheetmask4.webp') }}"
+            alt="Product 4"
+          />
+          <h2>Product 4</h2>
+          <p>
+            O3+ Facialist Radiant Face Sheet Mask for Oxygenates and tightens
+            pores to reduce uneven skin tone
+          </p>
+          <a
+            href="https://www.amazon.in/O3-Facialist-Radiant-Oxygenates-tightens/dp/B095KKTCGC/ref=sr_1_18?crid=3JYIJ4J8TV78C&dib=eyJ2IjoiMSJ9.LLKK5-qMmpJWZA-TogWYl8y5S78nINWHsfzDMn6pM0HOiSddVEvECJThhzo2k4o7kcHdpNM-oCv5vHcx6PLFPEsHebPTalqE0iQ_D8fC_EiNoSH8KrpxFGe4q3j_C2-Zv3zFczAzv4CMEfxhPa3rY9fnem6H8TG3-ygAKTg4Kuh3bOxknmM9j2rapANlyef7bYoXJ4mFkTUTYXBCPA4y0rDdAQQ_N1y3NKOC-LfTgFD9-3sotO6kGhUCGGvlRJkM38xsaTiU643pjH1a2Wb_ZnPp3tHLZbYRN4AeoOFaXKM._z4hP9SaeGGup4Rs1xfcbtFLBkAagrhzyV2bp2gnayU&dib_tag=se&keywords=sheet+mask&qid=1709706291&sprefix=sheet+%2Caps%2C274&sr=8-18"
+            target="_blank"
+            >View on Amazon</a
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='skinoil5.webp') }}"
+            alt="Product 5"
+          />
+          <h2>Product 5</h2>
+          <p>
+            Richfeel Vitamin E Oil | Blend of Almond, Wheatgerm, Walnut & Carrot
+            Oils | Physician Formulated | Antioxidant | Fight Dullness, Damage &
+            Ageing of Skin.
+          </p>
+          <a
+            href="https://www.amazon.in/Wheatgerm-Physician-Formulated-Antioxidant-Anti-Stretch/dp/B007E9EW4A/ref=sr_1_3?crid=30W9XR0IIL2YG&dib=eyJ2IjoiMSJ9.9FLIVl6BVJ5W-SafD_T_ucqDyFF7QTojHh-phjVgQ9KXcGoUmCWCabGkluqvChZHsWuaTQyMohbMBqQKza5DrveyWYfPDZkExTLWe20V7fVZZh1XgfY3wEBbxk-RPXynLgsoDp3v1pk3SR6iYqjF82TLCSTbIe_sqBpsRfgAaBkNkx2ipvfQzaiylLFdneLitR5YFNskO_cOxptwPXCk_i4xolCDcx4ADX0OALLgYxxf8mqBIp1Ktoa90aoKgeetGuog6Rx2OnEN9lz2dXGDRyrZd0Wx-LLmq7oo9VfKaI0.Zr5ONbQS3RwpxvHSXCoS3-mnjUtm2rUXPdGqrEiG3O8&dib_tag=se&keywords=skin+oil&qid=1709706593&sprefix=skin+oil%2Caps%2C293&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+            target="_blank"
+            >View on Amazon</a
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="product">
+          <img
+            src="{{ url_for('static', filename='toner.jpeg') }}"
+            alt="Product 6"
+          />
+          <h2>Product 6</h2>
+          <p>
+            Dermafique All Important Skin Toner 150ml, Toner for Oily Skin,
+            Enriched with Hyaluronic Acid & Vitamin E, Face Toner for Cleansed
+            Pores Leaving Skin Smooth and Radiant
+          </p>
+          <a
+            href="https://www.amazon.in/Dermafique-Important-Toner-Marine-150ml/dp/B07DDT8R7C"
+            target="_blank"
+            >View on Amazon</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

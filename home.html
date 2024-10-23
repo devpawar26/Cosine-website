@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coskin - Your Skin Care Companion</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      h1:hover {
+        color: #1d8ba6;
+      }
+
+      nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 10px;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+      }
+
+      nav ul li a:hover {
+        color: #1d8ba6;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      main{
+        background-image: url("./static/bk.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      button:hover {
+        background-color: #555;
+      }
+      header img{
+        padding:0;
+        margin:0 0;
+      }
+
+      .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .about-content img {
+        max-width: 300px;
+        border-radius: 10px;
+        margin-right: 20px;
+      }
+
+      .customer-review {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .customer-review p {
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      footer p {
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+        padding: 22px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+            <img src="{{ url_for('static', filename='logososkin.png') }}"alt="logo" width="5%" height="5%">
+      <h1>Coskin</h1>
+      <nav>
+        <ul>
+          <li><a href="#"> Home</a></li>
+          <li><a href="{{ url_for('project') }}">Take Survey</a></li>
+          <li><a href="{{ url_for('employees') }}">Our Team</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="about">
+        <div class="about-content">
+          <img
+            src="{{ url_for('static', filename='oily5.jpeg') }}"
+            alt="About Coskin"
+          />
+
+          <div>
+            <h2>About Us</h2>
+            <p>
+              Welcome to Coskin, your ultimate destination for all things
+              related to skincare and makeup! At Coskin, we believe that
+              everyone deserves to have healthy, radiant skin regardless of
+              their skin type. Our mission is to provide you with the best
+              products and tips tailored to your specific skin needs.
+            </p>
+            <p>
+              Explore our wide range of products designed for oily, dry, and
+              combination skin types. Whether you're looking for moisturizers,
+              cleansers, or makeup essentials, we've got you covered!
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="customer-review">
+          <p>
+            "I've been using Coskin products for a month now, and I can already
+            see a significant improvement in my skin's texture. Highly
+            recommended!"
+          </p>
+          <p>- Babu Bhaiya.</p>
+        </div>
+        <div class="customer-review">
+          <p>
+            "As someone with combination skin, finding the right products has
+            always been a struggle. Thanks to Coskin, I finally have a skincare
+            routine that works for me!"
+          </p>
+          <p>- Devi Prasad</p>
+        </div>
+      </section>
+      <section id="navigate">
+        <h2>Find the Perfect Products for Your Skin</h2>
+        <p>Click below to explore products tailored to your skin type:</p>
+        <button><a href="{{ url_for('project') }}">Take Survey</a></button>
+      </section>
+    </main>
+    <footer>
+      <p>Coskin &copy; 2024 . All rights reserved.</p>
+    </footer>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
